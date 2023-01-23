@@ -28,7 +28,7 @@ router.get("/", (req, res) => {
 });
 
 // get one product
-router.get("/:id", (req, res) => {
+router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
   Product.findOne({
@@ -38,7 +38,7 @@ router.get("/:id", (req, res) => {
     attributes: ['id', 'product_name', 'price', 'stock'],
     include: [
       {
-        modle: Category,
+        model: Category,
         attributes: ['category_name']
       },
       {
